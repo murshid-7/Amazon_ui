@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, non_constant_identifier_names
 
-import 'package:amazon_ui/navbar_search.dart';
+import 'package:amazon_ui/screens/navigation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -74,86 +74,21 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 110,
+            height: 126,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Padding(padding: EdgeInsets.all(8.0)),
-                Column(
-                  children: [
-                    Image.asset('assets/image/deasl.jpg',
-                        height: 90, width: 80),
-                    Text(
-                      'Deals',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    SizedBox(height: 10),
-                    Image.asset('assets/image/th.jpg', height: 80, width: 80),
-                    Text(
-                      'Fashion',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    Image.network(
-                      'https://clipart-library.com/image_gallery2/Vegetable-Transparent.png',
-                      height: 90,
-                      width: 80,
-                    ),
-                    Text(
-                      'Fresh',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    SizedBox(height: 10),
-                    Image.asset(
-                      'assets/image/Apple-iPhone-12-PNG-HD.png',
-                      height: 80,
-                      width: 80,
-                    ),
-                    Text(
-                      'Mobiles',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    Image.asset('assets/image/th (1).jpg',
-                        height: 90, width: 70),
-                    Text(
-                      'Electronics',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    Image.network(
-                      'https://getdrawings.com/vectors/tv-vector-25.png',
-                      height: 90,
-                      width: 60,
-                    ),
-                    Text(
-                      'MiniTV',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+                TopSlide('assets/image/deasl.jpg', 'Deals'),
+                TopSlide('assets/image/th.jpg', 'Fashion'),
+                TopSlide(
+                    '',
+                    'Fresh'),
+                TopSlide(
+                    'assets/image/Apple-iPhone-12-PNG-HD.png', 'Mobiles'),
+                TopSlide('assets/image/th (1).jpg', 'Electronics'),
+                TopSlide(
+                    'https://getdrawings.com/vectors/tv-vector-25.png',
+                    'MiniTV'),
               ],
             ),
           ),
@@ -235,8 +170,51 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+               SizedBox(
+            height: 126,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Slide2('assets/image/deasl.jpg', 'Deals'),
+                Slide2('assets/image/th.jpg', 'Fashion'),
+                Slide2(
+                    'https://clipart-library.com/image_gallery2/Vegetable-Transparent.png',
+                    'Fresh'),
+                Slide2(
+                    'assets/image/Apple-iPhone-12-PNG-HD.png', 'Mobiles'),
+                Slide2('assets/image/th (1).jpg', 'Electronics'),
+                Slide2(
+                    'https://getdrawings.com/vectors/tv-vector-25.png',
+                    'MiniTV'),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+Widget TopSlide(String imageUrl, String text) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      children: [
+        Image.asset(imageUrl, height: 90, width: 80),
+        Text(text, style: TextStyle(fontWeight: FontWeight.bold)),
+      ],
+    ),
+  );
+}
+Widget Slide2(String imageUrl, String text) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      children: [
+        Image.asset(imageUrl, height: 90, width: 80),
+        Text(text, style: TextStyle(fontWeight: FontWeight.bold)),
+      ],
+    ),
+  );
+}
+

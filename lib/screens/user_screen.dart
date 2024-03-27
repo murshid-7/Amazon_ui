@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, non_constant_identifier_names
 
-import 'package:amazon_ui/navbar_search.dart';
 import 'package:amazon_ui/screens/buy_again_screen.dart';
+import 'package:amazon_ui/screens/navigation.dart';
 import 'package:amazon_ui/screens/orders_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -220,7 +220,7 @@ class UserScreen extends StatelessWidget {
         border: Border.all(color: Colors.grey),
         image: DecorationImage(
           image: AssetImage(imagePath),
-          fit: BoxFit.cover,
+          fit: BoxFit.contain,
         ),
       ),
     );

@@ -1,6 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names
 
-import 'package:amazon_ui/navbar_search.dart';
+import 'package:amazon_ui/screens/navigation.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {

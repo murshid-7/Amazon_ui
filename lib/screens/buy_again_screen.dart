@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:amazon_ui/navbar_search.dart';
+import 'package:amazon_ui/screens/navigation.dart';
 
 import 'package:flutter/material.dart';
 
@@ -116,9 +116,23 @@ class BuyAgain extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          addCart('assets/image/iphone 11.webp'),
-                          addCart('assets/image/iphone 11.webp'),
-                          addCart('assets/image/iphone 11.webp'),
+                          addCart(
+                            'https://m.media-amazon.com/images/I/61VuVU94RnL._AC_UY327_FMwebp_QL65_.jpg',
+                            "iphone 11 (black 64gb)",
+                            "40000/-",
+                            'get it by mon, april 17',
+                            'blockbuster value deal',
+                          ),
+                          addCart(
+                              'https://m.media-amazon.com/images/I/818VqDSKpCL._AC_UY327_FMwebp_QL65_.jpg',
+                              'Redmi Note11 (space 32gb)',
+                              "25000/-",
+                              'get it by mon, april 17'),
+                          addCart(
+                              'https://m.media-amazon.com/images/I/61gdyDHr9ZL._AC_UY327_FMwebp_QL65_.jpg',
+                              "Vivo Y27 (Burgundy 6gb ram)",
+                              "18000/-",
+                              'get it by mon, april 17')
                         ],
                       ),
                     ),
@@ -126,9 +140,43 @@ class BuyAgain extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          addCart('assets/image/Apple-iPhone-12-PNG-HD.png'),
-                          addCart('assets/image/Apple-iPhone-12-PNG-HD.png'),
-                          addCart('assets/image/Apple-iPhone-12-PNG-HD.png'),
+                          addCart(
+                              'https://m.media-amazon.com/images/I/61G6ef-AH-L._AC_UY327_FMwebp_QL65_.jpg',
+                              "Tecno pop8(Grey 240gb)",
+                              "30000/-",
+                              'get it by mon, april 17'),
+                          addCart(
+                              'https://m.media-amazon.com/images/I/813sVzTfvaL._AC_UY327_FMwebp_QL65_.jpg',
+                              'Samsung m04(green 4gb)',
+                              "8999/-",
+                              'get it by mon, april 17'),
+                          addCart(
+                              'https://m.media-amazon.com/images/I/717Ol2BoLLL._AC_UY327_FMwebp_QL65_.jpg',
+                              "Nothing 2a(black 8gb ram)",
+                              "24500/-",
+                              'get it by mon, april 17')
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          addCart(
+                              'https://m.media-amazon.com/images/I/81KcHWggkkL._AC_UY327_FMwebp_QL65_.jpg',
+                              "Infixix 8(8gb ram)",
+                              "17000/-",
+                              'get it by mon, april 17'),
+                          addCart(
+                              'https://m.media-amazon.com/images/I/61x1B80rNnL._AC_UY327_FMwebp_QL65_.jpg',
+                              'vivo v20(6gb ram)',
+                              "27000/-",
+                              'get it by mon, april 17'),
+                          addCart(
+                              'https://m.media-amazon.com/images/I/61v29G37-WL._AC_UY327_FMwebp_QL65_.jpg',
+                              "I-Kall 510(4gb ram)",
+                              "5000/-",
+                              'get it by mon, april 17')
                         ],
                       ),
                     ),
@@ -142,7 +190,8 @@ class BuyAgain extends StatelessWidget {
     );
   }
 
-  Card addCart(String url) {
+  Widget addCart(String url, String text, String text1, String text3,
+      [String text2 = '']) {
     return Card(
       child: Column(
         children: [
@@ -153,12 +202,28 @@ class BuyAgain extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 130,
-                  child: Image.asset(url),
+                  child: Image.network(url),
                 ),
-                const Text('Apple'),
-                const Text('iPhone 12 - Midnight'),
-                const Text('₹52,999 (12% off)'),
-                const Text('Delivery by Amazon'),
+                Text(text),
+                Text(text1),
+                Text(text2,
+                    style: TextStyle(
+                        backgroundColor: Color.fromARGB(255, 193, 54, 44),
+                        color: Colors.white)),
+                Text(text3),
+                Row(
+                  children: [
+                    Text(
+                      '      -28%',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text('offer applied')
+                  ],
+                ),
+                Text('Delivery by amazon'),
                 ElevatedButton(
                     style: const ButtonStyle(
                         backgroundColor:

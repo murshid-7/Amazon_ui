@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors, non_constant_identifier_names
 
-import 'package:amazon_ui/navbar_search.dart';
+import 'package:amazon_ui/screens/navigation.dart';
 import 'package:flutter/material.dart';
 
 class YourOrders extends StatelessWidget {
@@ -134,7 +134,7 @@ class YourOrders extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            SettingsRow('Login & security'),
+                            SettingsRow('Login & security',),
                             Divider(color: Colors.grey),
                             SettingsRow('Your Addresses'),
                             Divider(color: Colors.grey),
